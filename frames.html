@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Extracted Frames</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Extracted Frames</h1>
+    <table>
+        <tr>
+            <th>Frame Number</th>
+            <th>Image</th>
+        </tr>
+        {% for frame_file in frame_files %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td><img src="{{ url_for('static', filename='frames/' + frame_file) }}"></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
